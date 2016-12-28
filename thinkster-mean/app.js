@@ -1,5 +1,5 @@
 // Declaring the (?angular module?)
-var app = angular.module('flapperNews', ['ui.router']);
+var app = angular.module('redditClone', ['ui.router']);
 
 // Configuration
 app.config([
@@ -7,18 +7,17 @@ app.config([
 	'$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 	  $stateProvider
-	    .state('home', {
-	      url: '/home',
-	      templateUrl: '/home.html',
-	      controller: 'MainCtrl'
-	    })
+		.state('home', {
+			url: '/home',
+			templateUrl: '/home.html',
+			controller: 'MainCtrl'
+		})
 		.state('posts', {
-		  url: '/posts/{id}',
-		  templateUrl: '/posts.html',
-		  controller: 'PostsCtrl'
-		});	    
-	  $urlRouterProvider.otherwise('home');
-
+			url: '/posts/{id}',
+			templateUrl: '/posts.html',
+			controller: 'PostsCtrl'
+		});
+	$urlRouterProvider.otherwise('home');
 	}
 ]);
 
@@ -60,7 +59,7 @@ app.controller('MainCtrl', [
 		// Add upvotes
 		$scope.incrementUpvotes = function(post) {
 		  post.upvotes += 1;
-		};		
+		};
 	}
 ]);
 
@@ -73,10 +72,14 @@ function($scope, $stateParams, postsService){
 	$scope.addComment = function(){
 	  if($scope.body === '') { return; }
 	  $scope.post.comments.push({
-	    body: $scope.body,
-	    author: 'user',
-	    upvotes: 0
+		body: $scope.body,
+		author: 'user',
+		upvotes: 0
 	  });
 	  $scope.body = '';
-	};	
+	};
+	// Add upvotes
+	$scope.incrementUpvotes = function(comment) {
+	  comment.upvotes += 1;
+	};
 }]);
