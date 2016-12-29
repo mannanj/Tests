@@ -1,5 +1,0 @@
-To render code: 
-	1. Install: npm install live-server.
-		a. After installation cd into your project folder and run live-server
-	2. Install: npm install -g http-server. 
-		a.  run http-server -o (-o is to open browser to the page.)

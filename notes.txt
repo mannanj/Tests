@@ -1,0 +1,12 @@
+Run agnular server:
+	- npm install -g live-server
+		- run: ‘live-server’ in directory
+	-npm install -g http-server
+		- run: ‘http-server -o’ in directory
+
+
+Use cURL on windows powershell:
+	- special syntax:
+		- 
+		- 
+	- how to install: http://thesociablegeek.com/azure/using-curl-in-powershell/
