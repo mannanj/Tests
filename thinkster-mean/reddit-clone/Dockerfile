@@ -26,4 +26,5 @@ COPY . /opt/mean.js
 
 # Start MongoDB and start the MEAN app
 ENV MONGOD_START "mongod --fork --logpath /var/log/mongodb.log --logappend --smallfiles"
-ENTRYPOINT ["/bin/sh", "-c", "$MONGOD_START && su dev && /bin/bash"]
+# ENTRYPOINT ["/bin/sh", "-c", "$MONGOD_START && su dev && /bin/bash"]
+ENTRYPOINT ["/bin/sh", "-c", "$MONGOD_START && npm start"]
