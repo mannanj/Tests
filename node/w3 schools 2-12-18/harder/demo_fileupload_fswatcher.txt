@@ -1,0 +1,16 @@
+- tell fswatcher to ignore things of certain patterns
+	- remove from backend will work for lx02, etc
+
+- fswatcher: 
+	- queue to synchronize things between threads
+	- polling observers
+	- main function: report_all_evidence (runs in beginning)
+	- then an observer and reporter
+	- observer watches for new files
+	- observing/reporting: end up in add_new_file
+	- reported when done processing/files done being added by: client.create_evidnece()
+	- classify()
+	- digital forensics
+		- disk image gets split into several files
+	- fswatcher doesn't look at contents of file (can create an empty file)
+	- 

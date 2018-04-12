@@ -1,0 +1,12 @@
+- Source:
+	- https://mva.microsoft.com/en-US/training-courses/introduction-to-angularjs-8682?l=qJ8KNLH1_1804984382
+
+- Notes:
+	- Angular is MVC
+	- Uses directive to load angular modules
+		- attributes anywhere on html called "ng-" or "data-ng"
+		- dom passes to angular, angular dynamically passes data to dom
+		- Loads modules: modular "mains" or "apps"
+	- Dependency injection: pass modular pieces to constructors 
+		- https://docs.angularjs.org/guide/di
+	- 
