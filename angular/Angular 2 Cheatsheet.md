@@ -19,6 +19,10 @@ Links
 	- Wiki https://github.com/angular/angular-cli/wiki
 - Style Guide
 	- Wiki https://angular.io/guide/styleguide
+- DOM Events
+	- https://www.w3schools.com/jsref/dom_obj_event.asp
+- Learn cool stuff
+	- https://alligator.io/angular/angular-algolia-instantsearch/
 
 
 Setup

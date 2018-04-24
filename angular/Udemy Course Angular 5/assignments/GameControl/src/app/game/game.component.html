@@ -1,0 +1,7 @@
+<button class="btn btn-primary" (click)="startGame()" [disabled]="counting">Start</button>
+<button class="btn btn-danger" (click)="quitGame()" [disabled]="!counting">Quit</button>
+<hr>
+<div *ngFor="let count of game_count">
+  <app-even [number]="count" *ngIf="count %2 == 0"></app-even>
+  <app-odd [number]="count" *ngIf="count %2 != 0"></app-odd>
+</div>
