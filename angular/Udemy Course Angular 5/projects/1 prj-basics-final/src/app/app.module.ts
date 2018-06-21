@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MatIconModule } from '@angular/material/icon';
-
+// Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -13,8 +12,14 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+
+// Services and directives
 import { DropdownDirective } from './shared/dropdown.directive';
 import {ShoppingService} from './shared/shopping.service';
+
+// Modules
+import { MatIconModule } from '@angular/material/icon';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import {ShoppingService} from './shared/shopping.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [ShoppingService],
   bootstrap: [AppComponent]

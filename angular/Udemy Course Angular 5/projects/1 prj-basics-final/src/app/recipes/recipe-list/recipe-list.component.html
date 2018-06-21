@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-xs-12">
     <a class="list-group-item clearfix text-center">
-      <button class="btn btn-success">New Recipe </button><span class="pull-right"><mat-icon>mood</mat-icon></span>
+      <button class="btn btn-success">New Recipe </button>
     </a>
     <app-recipe-item
-      *ngFor="let recipe of recipes; let i = index"
+      *ngFor="let recipe of recipes"
       [recipe]="recipe"
       (click)="selectRecipe(recipe)">
     </app-recipe-item>

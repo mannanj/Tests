@@ -1,19 +1,16 @@
-<hr><hr>
 <div *ngIf="recipe">
   <div class="row">
     <div class="col-xs-12">
       <img src="{{ recipe.imagePath }}"
            alt=""
            class="img-responsive"
-           style="height:300px;">
+           style="height:300px; width: 100%;">
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
       <h1>{{ recipe.name }}</h1>
     </div>
-  </div>
-  <div class="row">
     <div class="col-xs-12">
       <div class="btn-group" appDropdown>
         <button
@@ -23,13 +20,11 @@
         </button>
         <ul class="dropdown-menu">
           <li><a (click)="addToShopping(recipe.ingredients)">To Shopping List</a></li>
-          <li><a href="#">Edit Recipe</a></li>
-          <li><a href="#">Delete Recipe</a></li>
+          <li><a>Edit Recipe</a></li>
+          <li><a>Delete Recipe</a></li>
         </ul>
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-xs-12">
       {{ recipe.description }}
     </div>
@@ -40,7 +35,7 @@
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients;">
             {{ ingredient.name }}
-            <span class="pull-right">({{ ingredient.amount }} {{ ingredient.units }})</span>
+            <span class="pull-right">{{ ingredient.amount }} {{ ingredient.units }}</span>
           </li>
         </ul>
       </div>
