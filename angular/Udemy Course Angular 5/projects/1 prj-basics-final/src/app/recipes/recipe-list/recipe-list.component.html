@@ -4,9 +4,9 @@
       <button class="btn btn-success">New Recipe </button>
     </a>
     <app-recipe-item
-      *ngFor="let recipe of recipes"
+      *ngFor="let recipe of recipes; let i = index;"
       [recipe]="recipe"
-      (click)="selectRecipe(recipe)">
+      [routerLink]="[ i ]">1
     </app-recipe-item>
   </div>
 </div>

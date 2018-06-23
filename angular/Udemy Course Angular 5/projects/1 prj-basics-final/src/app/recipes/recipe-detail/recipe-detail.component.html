@@ -1,17 +1,12 @@
 <div *ngIf="recipe">
   <div class="row">
     <div class="col-xs-12">
-      <img src="{{ recipe.imagePath }}"
-           alt=""
-           class="img-responsive"
-           style="height:300px; width: 100%;">
+      <h1 style="text-align: center;">{{ recipe.name }}</h1>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>{{ recipe.name }}</h1>
+    <div class="col-xs-8">
+      {{ recipe.description }}
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-4">
       <div class="btn-group" appDropdown>
         <button
           type="button"
@@ -25,9 +20,6 @@
         </ul>
       </div>
     </div>
-    <div class="col-xs-12">
-      {{ recipe.description }}
-    </div>
   </div>
   <h3>Ingredients: </h3>
   <div class="row">
@@ -39,5 +31,13 @@
           </li>
         </ul>
       </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="{{ recipe.imagePath }}"
+           alt=""
+           class="img-responsive"
+           style="height:300px; width: 75%;  margin: auto;">
+    </div>
   </div>
 </div>

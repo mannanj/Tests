@@ -29,4 +29,8 @@ export class RecipeService {
       ]
     ),
   ];
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+  // selectedRecipe: Recipe = this.recipes[0]; // Should be in a constructor or NgOnInit?
 }
