@@ -13,6 +13,7 @@ export class ShoppingListComponent implements OnInit {
   constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit() {
+    // TODO: Combine duplicate ingredients
     this.ingredients = this.shoppingService.getIngredients();
   }
 }
