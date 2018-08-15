@@ -22,5 +22,13 @@
 <div fxLayout="row"
      fxLayoutGap="5px"
      fxLayoutAlign="center center">
+  <button mat-raised-button
+          (click)="addIngredient(name.value, amount.value, units.value)">Add</button>
+  <button mat-raised-button
+          color="warn"
+          (click)="delIngredient()">Delete</button>
+  <button mat-raised-button
+          color="primary"
+          (click)="resetIngredientForm()">Reset</button>
 
 </div>
