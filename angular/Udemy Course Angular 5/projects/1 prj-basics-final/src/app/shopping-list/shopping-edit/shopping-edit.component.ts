@@ -2,6 +2,7 @@ import { MaterialModule } from './../../modules/material.module';
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingService } from '../../shared/shopping.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -9,6 +10,7 @@ import { ShoppingService } from '../../shared/shopping.service';
   styleUrls: ['./shopping-edit.component.scss']
 })
 export class ShoppingEditComponent implements OnInit {
+  newIngredientForm: FormGroup;
   units = [
     { value: 'grams', symbol: 'g' },
     { value: 'ounces', symbol: 'oz' },
@@ -19,9 +21,17 @@ export class ShoppingEditComponent implements OnInit {
   constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit() {
+    this.newIngredientForm = new FormGroup({
+      'name': new FormControl(''),
+      'amount': new FormControl(''),
+      'units': new FormControl('g'),
+    });
   }
-  addIngredient(name: string, amount: number, units: string) {
-    const ingredient = new Ingredient(name, amount, units);
+  addIngredient() {
+    console.log(this.newIngredientForm.value);
+    const ingredient = new Ingredient(this.newIngredientForm.value.name,
+      this.newIngredientForm.value.amount,
+      this.newIngredientForm.value.units);
     this.shoppingService.addIngredient(ingredient);
   }
   delIngredient() {

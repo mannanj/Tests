@@ -1,34 +1,45 @@
 <div fxLayout="row"
      fxLayoutGap="25px">
-  <mat-form-field style="width: 40vw">
-    <input matInput
-           placeholder="Name">
-  </mat-form-field>
+  <form [formGroup]="newIngredientForm"
+        (ngSubmit)="addIngredient()">
+    <mat-form-field style="width: 35vw">
+      <input matInput
+             placeholder="Name"
+             formControlName="name"
+             required>
+    </mat-form-field>
 
-  <mat-form-field style="width: 40vw">
-    <input matInput
-           placeholder="Amount">
-  </mat-form-field>
+    <mat-form-field style="width: 35vw">
+      <input matInput
+             placeholder="Amount"
+             type="number"
+             formControlName="amount"
+             required>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-select placeholder="Units">
-      <mat-option *ngFor="let unit of units"
-                  [value]="unit.symbol">
-        {{ unit.value }} ({{unit.symbol}})
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<div fxLayout="row"
-     fxLayoutGap="5px"
-     fxLayoutAlign="center center">
-  <button mat-raised-button
-          (click)="addIngredient(name.value, amount.value, units.value)">Add</button>
-  <button mat-raised-button
-          color="warn"
-          (click)="delIngredient()">Delete</button>
-  <button mat-raised-button
-          color="primary"
-          (click)="resetIngredientForm()">Reset</button>
+    <mat-form-field>
+      <mat-select placeholder="Units"
+                  formControlName="units">
+        <mat-option *ngFor="let unit of units"
+                    [value]="unit.symbol">
+          {{ unit.value }} ({{unit.symbol}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div id="buttons">
+      <button mat-raised-button
+              type="submit"
+              [disabled]="newIngredientForm.invalid">Add</button>
+      <button mat-raised-button
+              color="warn"
+              (click)="delIngredient()">Delete</button>
+      <button mat-raised-button
+              color="primary"
+              (click)="resetIngredientForm()">Reset</button>
+    </div>
+
+
+  </form>
 
 </div>
